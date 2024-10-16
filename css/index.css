@@ -1,0 +1,520 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.parallax-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: Montserrat, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-item .Div_1 {
+  top: 40%;
+  left: 60%;
+  font-family: 'Franklin Gothic Heavy';
+  justify-content: start;
+  align-items: flex-start;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px, 5px, 70px rgba(255, 255, 255, 0.5);
+  transform: scale(1, 1.1) translate(-50%, 10%);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.Div_1 {
+  transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
+}
+
+/* Adjust the h2 position inside Div_1 */
+.Div_1 h2 {
+  margin-top: 0; /* Reset any margin that might affect its position */
+  font-size: 5vw; /* Ensure the font size remains responsive */
+  text-align: center; /* Center align the text */
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+nav{
+  background: black;
+  padding: 1rem;
+  width: 100%; /* Make sure the nav takes up the full width */
+  position: fixed; /* Fix the nav at the top of the page */
+  top: 0; /* Ensure it's positioned at the very top */
+  left: 0; /* Align it to the left edge */
+  font-family: 'Helvetica';
+  z-index: 4; /* Higher z-index to stay above other content */
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li{
+display: inline;
+}
+
+nav ul li a{
+color: white;
+text-decoration: none;
+padding: 0.5rem 1rem;
+display: block;
+}
+
+nav ul li a:hover{
+  background-color: #575757;
+  border-radius: 50px;
+}
+
+
+/* Explore button positioned at the center but slightly lower */
+.explore-section {
+  position: absolute;
+  top: 75%; /* Adjust this to control how far down the button is */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* Ensuring the button stays on top */
+}
+
+.wrap-delete * {
+  margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+  .wrap-delete button {
+      width: 155px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); /* Soft shadow */
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+      backdrop-filter: blur(10px); /* Blur effect behind the button */
+      border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: white border for more definition */
+    }
+  
+  .wrap-delete button, .wrap-delete button span {
+      transition: 200ms;
+  }
+  
+  .wrap-delete button .text {
+      font-family: 'Helvetica';
+      font-size: 0.9rem;
+      transform: translateX(71px);
+      color: white;
+      font-weight: bold;
+  }
+  
+  .wrap-delete button .icon {
+      position: absolute;
+      border-right: 1px solid #000000;
+      transform: translateX(5px);
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .wrap-delete button svg {
+      width: 22px;
+      fill: #eee;
+  }
+  
+  .wrap-delete button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect behind the button */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: white border for more definition */
+  }
+  
+  .wrap-delete button:hover .text {
+      color: transparent;
+    }
+  
+    .wrap-delete button:hover .icon {
+      width: 150px;
+      border-right: none;
+  }
+  
+  .wrap-delete button:focus {
+    outline: none;
+  }
+  
+  /* Slower moving background */
+  .parallax-item:first-child::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background: url("../images/landscape.jpg") no-repeat top center;
+  background-size: cover;
+  z-index: 0; /* Behind everything */
+  transform: translateZ(-2px) translateY(var(--before-scroll, 0));
+}
+
+/* Normal scrolling background */
+.parallax-item:first-child::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background: url("../images/landscape-rb.png") no-repeat top center;
+  background-size: cover;
+  transform: translateZ(-0.5px) translateY(var(--before-scroll, 0));
+  z-index: 2; /* Between the text and the slower background */
+}
+
+/* Additional sections */
+.parallax-item:nth-child(2) {
+  background-color: rgba(172, 200, 229, 1);
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .parallax-item h2 {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+  
+  .parallax-item {
+    min-height: 80vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .parallax-item h2 {
+    font-size: 1.2rem;
+  }
+}
+
+
+/*
+*/
+.Div_2 {
+  position: absolute; /* or relative if you want it within a parent */
+  top: 7%; /* Ensure it's positioned at the very top */
+  left: 0; /* Ensure it's positioned at the very left */
+  padding: 30px;
+  border-radius: 8px; /* Rounded corners */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+h1 {
+  font-size: 2.7rem; /* Adjust size as necessary */
+  margin-bottom: 3rem; /* Space below heading */
+  color: #112a46;
+}
+
+p{
+  font-family: "Lora", serif;
+  font-size: 17px; /* Adjust size for better readability */
+  margin-bottom: 1rem;
+}
+
+span {
+  font-family: "Lora", serif;
+  font-size: 17px; /* Adjust size for better readability */
+  margin-bottom: 1.7%; /* Space below paragraph */
+}
+
+.resume-link {
+  font-family: "Lora", serif;
+  position: relative;
+  color: #112a46;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.resume-link::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Initially 0 width */
+  height: 2px;
+  bottom: -3px;
+  background-color: #18272F;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.resume-link:hover::after {
+  width: 15.8%; /* Expands only when hovered over text/SVG */
+}
+
+.resume-link svg {
+  transition: transform 0.3s ease;
+}
+
+
+
+.Div_2 a {
+  margin-bottom: 5%; /* Space below paragraph */
+}
+
+/* Glassmorphism effect */
+.glassmorphism-box {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); /* Soft shadow */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect behind the button */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: white border for more definition */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);  /* Light border for the frosted look */
+  margin-bottom: 2rem;  /* Add space below the glassmorphism container */
+}
+
+/* Skills section styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-item i {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover i {
+  color: white;
+}
+
+.skill-item span {
+  font-size: 1rem;
+}
+
+.skill-item img {
+  width: 3rem; /* Matches the font size of icons */
+  height: 3rem; /* Maintain a square aspect ratio */
+  margin-bottom: 0.5rem; /* Same as the icon margin */
+  object-fit: contain; /* Keeps the image's aspect ratio */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition for filter and transform */
+}
+
+.skill-item:hover img {
+  cursor: none;
+  filter: brightness(1.2); /* Keep the image lightening effect */
+  transition: filter 0.3s ease, content 0.3s ease; /* Smooth transition */
+}
+
+
+.skill-item:nth-child(1):hover img {
+  content: url('../images/whitehtml.svg');
+}
+.skill-item:nth-child(2):hover img {
+  content: url('../images/whitecss.svg');
+}
+.skill-item:nth-child(3):hover img {
+  content: url('../images/whitejs.svg');
+}
+.skill-item:nth-child(4):hover img {
+  content: url('../images/whitenodejs.svg');
+  
+}.skill-item:nth-child(5):hover img {
+  content: url('../images/whitejava.svg');
+}
+
+.parallax-item:nth-child(3) {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/sterling-davis-4iXagiKXn3Y-unsplash-min.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax Effect for DIV 3 */
+  min-height: 600px;
+}
+
+.Div_3 {
+  display: flex;
+  justify-content: center; /* Center the glass box horizontally */
+  align-items: center; /* Center the content vertically */
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;
+  position: relative;
+}
+
+
+.Div_3 h3{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 5vw;
+  font-weight: 600;
+  margin: 0; /* Removes default margin from h3 */
+  letter-spacing: 40px;
+}
+
+.glass-box {
+  width: 100%; /* Take the full width of the page */
+  height: 60%; /* Adjust height based on the content */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 35px 0; /* Vertical padding */
+  backdrop-filter: blur(30px); /* Glass effect */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Display only top border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Display only bottom border */}
+
+
+.parallax-item:nth-child(4) {
+  background: #E6A38F;
+}
+
+.Div_4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute cards evenly */
+  align-items: stretch; /* Ensure that all cards have the same height */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  width: 30%;
+  margin: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  height: 550px; /* Increased height to accommodate more content */
+}
+
+.panel.description {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  flex-grow: 1;
+  max-height: 150px; /* Limits the height of the description panel */
+  overflow-x: hidden; /* Disables horizontal scroll */
+  overflow-y: hidden; /* Enables vertical scrolling */
+}
+
+.panel.description h3 {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.85); /* Sticky header with background */
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.panel.description ul {
+  padding-top: 20px; /* Padding to ensure space between the header and the list */
+  padding-left: 8px;
+  margin-bottom: 8px;
+  margin: 0;
+}
+
+.panel.button-panel {
+  margin-top: 20px;
+  position: relative;
+  height: 400px; /* Adjust height to show more images */
+  overflow: hidden; /* Prevent overflow of images */
+}
+
+.screenshot-wrapper {
+  position: relative;
+  height: 150px; /* Ensure full height */
+  width: 100%; /* Ensure full width */
+  display: flex;
+  flex-direction: column; /* Vertically align the images */
+  overflow: hidden; /* Hide overflow initially */
+}
+
+.screenshot-wrapper img {
+  width: 98%;
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  margin-bottom: 10px; /* Space between images */
+  filter: blur(5px); /* Default blur applied to images */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+  padding-left: 5px;
+}
+
+.card:hover .screenshot-wrapper {
+  max-height: 300px; /* Allow the container to expand further */
+  padding-bottom: 10px; /* Ensure space at the bottom for the last image */
+}
+
+.screenshot-wrapper:hover img {
+  filter: blur(0); /* Remove blur on hover */
+}
+
+.card:hover .screenshot-wrapper img {
+  filter: none; /* Clear blur on hover */
+}
+
+.screenshot-wrapper {
+  height: 150px; /* Initial height for preview */
+  overflow-y: hidden; /* No scroll initially */
+}
+
+.card:hover .screenshot-wrapper {
+  height: 300px; /* Expanded height on hover */
+}
+
+.card:hover .screenshot-wrapper:hover {
+  overflow-y: auto; /* Allow scrolling when hovered */
+}
+
+/* Scrollbar Styling for Description */
+.panel.description::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel.description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.panel.description::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.panel.description::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
